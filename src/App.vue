@@ -32,7 +32,7 @@
             flat
           >
             <v-icon left>{{ link.icon }}</v-icon>
-            {{ link.title}}
+            {{ link.title }}
           </v-btn>
         </v-toolbar-items>
     </v-toolbar>
