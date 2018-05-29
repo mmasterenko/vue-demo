@@ -73,8 +73,10 @@
           const ad = {
             title: this.title,
             description: this.description,
-            promo: this.promo
+            promo: this.promo,
+            imageSrc: 'https://vuetifyjs.com/static/doc-images/carousel/planet.jpg'
           }
+          this.$store.dispatch('createAd', ad)
         }
       }
     }
