@@ -35,6 +35,8 @@ export default {
       // payload.id = Math.random().toString()
       commit('clearError')
       commit('setLoading', true)
+      const a = document.title
+      document.title = 'uploading ...'
 
       try {
         const newAd = new Ad(
@@ -63,6 +65,7 @@ export default {
         throw error
       }
 
+      document.title = a
       // commit('createAd', payload)
     },
     async fetchAds ({commit}) {

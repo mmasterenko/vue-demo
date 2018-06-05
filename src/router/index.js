@@ -27,14 +27,14 @@ export default new Router({
     {
       path: '/list',
       name: 'list',
-      component: AdList,
-      beforeEnter: AuthGuard
+      component: AdList
+      // beforeEnter: AuthGuard
     },
     {
       path: '/new',
       name: 'newAd',
-      component: NewAd,
-      beforeEnter: AuthGuard
+      component: NewAd
+      // beforeEnter: AuthGuard
     },
     {
       path: '/login',
@@ -49,8 +49,8 @@ export default new Router({
     {
       path: '/orders',
       name: 'orders',
-      component: Orders,
-      beforeEnter: AuthGuard
+      component: Orders
+      // beforeEnter: AuthGuard
     }
   ],
   mode: 'history'
