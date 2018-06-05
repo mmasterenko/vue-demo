@@ -15,7 +15,7 @@ Vue.component('app-buy-modal', BuyModalComponent)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
-new Vue({
+const vm = new Vue({
   el: '#app',
   router,
   store,
@@ -40,3 +40,5 @@ new Vue({
     this.$store.dispatch('fetchAds')
   }
 })
+
+console.log(vm)
