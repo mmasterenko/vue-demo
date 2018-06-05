@@ -73,7 +73,7 @@ export default {
 
       try {
         const fbVal = await fb.database().ref('ads').once('value')
-        const ads = fbVal.val()
+        const ads = fbVal.val() || []
 
         Object.keys(ads).forEach(key => {
           const ad = ads[key]

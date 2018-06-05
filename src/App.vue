@@ -37,7 +37,7 @@
             to="/"
             tag="span"
             class="pointer"
-          >Ad application</router-link>
+          >Advertises</router-link>
         </v-toolbar-title>
         <v-spacer></v-spacer>
         <v-toolbar-items class="hidden-sm-and-down">

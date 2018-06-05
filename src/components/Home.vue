@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="!loading">
-      <v-container fluid>
+      <v-container fluid v-if="promoAds.length !== 0">
         <v-layout row>
           <v-flex xs12>
             <v-carousel>
@@ -24,7 +24,7 @@
         </v-layout>
       </v-container>
       <v-container grid-list-lg>
-        <v-layout row wrap>
+        <v-layout row wrap v-if="ads.length !== 0">
           <v-flex
             xs12
             sm6
@@ -47,6 +47,11 @@
                 <app-buy-modal :ad="ad"></app-buy-modal>
               </v-card-actions>
             </v-card>
+          </v-flex>
+        </v-layout>
+        <v-layout v-else>
+          <v-flex class="text-xs-center">
+            <h1 class="text--secondary">We have no ads</h1>
           </v-flex>
         </v-layout>
       </v-container>

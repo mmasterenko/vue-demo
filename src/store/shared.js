@@ -8,6 +8,7 @@ export default {
       state.loading = payload
     },
     setError (state, payload) {
+      console.log(payload)
       state.error = payload
     },
     clearError (state) {

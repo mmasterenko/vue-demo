@@ -37,7 +37,7 @@ export default {
 
       try {
         const fbVal = await fb.database().ref(`/users/${getters.user.id}/orders`).once('value')
-        const orders = fbVal.val()
+        const orders = fbVal.val() || []
 
         Object.keys(orders).forEach(key => {
           const o = orders[key]
