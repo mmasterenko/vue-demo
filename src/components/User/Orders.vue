@@ -74,6 +74,7 @@
       }
     },
     created () {
+      console.log('Orders.vue:created')
       this.$store.dispatch('fetchOrders')
     }
   }
