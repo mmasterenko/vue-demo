@@ -34,6 +34,13 @@
                 class="primary"
               >Open</v-btn>
             </v-list-tile-action>
+            <v-spacer></v-spacer>
+            <v-list-tile-action>
+              <v-btn
+                @click="removeOrder(order)"
+                class="error"
+              >Delete</v-btn>
+            </v-list-tile-action>
           </v-list-tile>
         </v-list>
       </v-flex>
@@ -61,6 +68,9 @@
             order.done = true
           })
           .catch(() => {})
+      },
+      removeOrder (order) {
+        this.$store.dispatch('removeOrder', order.id)
       }
     },
     created () {

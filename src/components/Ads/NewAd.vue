@@ -6,14 +6,14 @@
         <v-form v-model="valid" ref="form" lazy-validation class="mb-3">
           <v-text-field
             name="title"
-            label="Ad title"
+            label="Title"
             type="text"
             v-model="title"
             :rules="[v => !!v || 'Title is required']"
           ></v-text-field>
           <v-text-field
             name="description"
-            label="Ad description"
+            label="Description"
             type="text"
             multi-line
             v-model="description"
@@ -22,7 +22,7 @@
         </v-form>
         <v-layout row class="mb-3">
           <v-flex xs12>
-            <v-btn class="warning" @click="triggerUpload">
+            <v-btn class="primary" @click="triggerUpload">
               Upload
               <v-icon right dark>cloud_upload</v-icon>
             </v-btn>
@@ -43,7 +43,7 @@
         <v-layout row>
           <v-flex xs12>
             <v-switch
-              label="Add to promo ?"
+              label="Rotate at main page ?"
               v-model="promo"
               color="primary"
             ></v-switch>
@@ -57,7 +57,7 @@
               :disabled="!valid || !image || loading"
               class="success"
               @click="createAd"
-            >Create ad</v-btn>
+            >Create</v-btn>
           </v-flex>
         </v-layout>
       </v-flex>

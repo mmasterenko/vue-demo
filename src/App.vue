@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app dark>
     <v-navigation-drawer app temporary v-model="drawer">
       <v-list>
         <v-list-tile
@@ -37,7 +37,7 @@
             to="/"
             tag="span"
             class="pointer"
-          >Advertises</router-link>
+          >Shop</router-link>
         </v-toolbar-title>
         <v-spacer></v-spacer>
         <v-toolbar-items class="hidden-sm-and-down">
@@ -99,8 +99,8 @@ export default {
       if (this.isUserLoggedIn) {
         return [
           {title: 'Orders', icon: 'bookmark_border', url: '/orders'},
-          {title: 'New ad', icon: 'note_add', url: '/new'},
-          {title: 'My ads', icon: 'list', url: '/list'}
+          {title: 'New', icon: 'note_add', url: '/new'},
+          {title: 'My items', icon: 'list', url: '/list'}
         ]
       }
       return [

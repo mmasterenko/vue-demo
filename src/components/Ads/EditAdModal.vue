@@ -29,6 +29,11 @@
                 multi-line
               ></v-text-field>
             </v-card-text>
+            <v-switch
+              label="Rotate at main page ?"
+              v-model="promo"
+              color="primary"
+            ></v-switch>
           </v-flex>
         </v-layout>
         <v-divider></v-divider>
@@ -52,6 +57,7 @@ export default {
   data () {
     return {
       modal: false,
+      promo: this.ad.promo,
       editedTitle: this.ad.title,
       editedDescription: this.ad.description
     }
@@ -60,6 +66,7 @@ export default {
     onCancel () {
       this.editedDescription = this.ad.description
       this.editedTitle = this.ad.title
+      this.promo = this.ad.promo
       this.modal = false
     },
     onSave () {
@@ -67,6 +74,7 @@ export default {
         this.$store.dispatch('updateAd', {
           title: this.editedTitle,
           description: this.editedDescription,
+          promo: this.promo,
           id: this.ad.id
         })
         this.modal = false

@@ -17,6 +17,10 @@ export default {
   mutations: {
     loadOrders (state, payload) {
       state.orders = payload
+    },
+    removeOrder (state, payload) {
+      const orderId = payload
+      state.orders = state.orders.filter(o => o.id !== orderId)
     }
   },
   actions: {
@@ -55,6 +59,16 @@ export default {
       commit('clearError')
       try {
         await fb.database().ref(`/users/${getters.user.id}/orders`).child(payload).update({done: true})
+      } catch (error) {
+        commit('setError', error.message)
+        throw error
+      }
+    },
+    async removeOrder ({commit, getters}, payload) {
+      commit('clearError')
+      try {
+        await fb.database().ref(`/users/${getters.user.id}/orders`).child(payload).remove()
+        commit('removeOrder', payload)
       } catch (error) {
         commit('setError', error.message)
         throw error

@@ -3,7 +3,7 @@
     <div v-if="!loading">
       <v-container fluid v-if="promoAds.length !== 0">
         <v-layout row>
-          <v-flex xs12>
+          <v-flex xs8 offset-xs2>
             <v-carousel>
               <v-carousel-item
                 v-for="ad in promoAds"

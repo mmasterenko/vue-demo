@@ -1,4 +1,4 @@
-# ad-project
+# vue-shop
 
 > A Vue.js project
 
@@ -20,4 +20,4 @@ npm run build --report
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
-demo: https://itc-ads-20190.firebaseapp.com
+[DEMO](https://vue-shop-1.firebaseapp.com)

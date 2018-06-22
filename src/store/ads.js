@@ -22,12 +22,13 @@ export default {
     loadAds (state, payload) {
       state.ads = payload
     },
-    updateAd (state, {title, description, id}) {
+    updateAd (state, {title, description, promo, id}) {
       const ad = state.ads.find(a => {
         return a.id === id
       })
       ad.title = title
       ad.description = description
+      ad.promo = promo
     }
   },
   actions: {
@@ -37,7 +38,7 @@ export default {
       commit('setLoading', true)
       const a = document.title
       document.title = 'uploading ...'
-
+      console.log(getters.user)
       try {
         const newAd = new Ad(
           payload.title,
@@ -92,16 +93,16 @@ export default {
         commit('setLoading', false)
       }
     },
-    async updateAd ({commit}, {title, description, id}) {
+    async updateAd ({commit}, {title, description, promo, id}) {
       commit('clearError')
       commit('setLoading', true)
 
       try {
         await fb.database().ref('ads').child(id).update({
-          title, description
+          title, description, promo
         })
         commit('updateAd', {
-          title, description, id
+          title, description, promo, id
         })
         commit('setLoading', false)
       } catch (error) {
